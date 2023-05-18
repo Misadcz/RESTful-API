@@ -1,0 +1,20 @@
+<Configuration>
+	<Appenders>
+		<File name="fileAppender" fileName="info.log">
+			<PatternLayout
+				pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</File>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Root level="info">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="fileAppender" />
+			<!-- log only to console   <AppenderRef ref="File" /> -->
+		</Root>
+	</Loggers>
+</Configuration>
